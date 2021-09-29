@@ -1,0 +1,21 @@
+/*
+For small components, there is the components/ folder.
+While layout/ is macro (defining the global wireframe), components/ is more focused on widgets.
+It contains all kind of specific modules like a slider, a loader, a widget, and basically
+anything along those lines.
+There are usually a lot of files in components/ since the whole site/application should be mostly
+composed of tiny modules.
+
+Each component does one thing and one thing only
+Components are re-usable across the project
+Components are independent
+*/
+
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+}
