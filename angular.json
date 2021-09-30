@@ -31,9 +31,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss"
+              {
+                "input": "src/styles/styles.scss",
+                "bundleName": "app"
+              },{
+                "input": "src/styles/themes/default.scss",
+                "bundleName": "default",
+                "inject": false
+              },{
+                "input": "src/styles/themes/dark.scss",
+                "bundleName": "dark",
+                "inject": false
+              }
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {

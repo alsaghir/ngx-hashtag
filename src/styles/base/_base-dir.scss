@@ -1,0 +1,17 @@
+/*
+- Global styles are imported here. A custom reset file can be added to override normalize
+- Typography (h1-6, p, a, blockquote, etc.) should be included
+- Globally defined tags (body, main, article, div, etc.) should also be included
+- One @import per line
+- The following files are imported as standard ready for customization:
+_fonts.scss - This file contains all @font-face declarations, if any.
+_helpers.scss -  This file contains CSS helper classes
+_typography.scss - Basic typography style for copy text
+Additional base stylesheets can be imported
+
+The base/ folder holds what we might call the boilerplate code for the project.
+In there, you might find some typographic rules,
+and probably a stylesheet (that I’m used to calling _base.scss),
+defining some standard styles for commonly used HTML elements.
+*/
+

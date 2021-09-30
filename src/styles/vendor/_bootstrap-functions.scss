@@ -1,0 +1,9 @@
+/* Take a look to the following for better idea
+~bootstrap/scss/bootstrap.scss
+https://getbootstrap.com/docs/5.1/customize/sass/
+*/
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '~bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
