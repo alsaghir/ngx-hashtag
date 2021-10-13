@@ -35,11 +35,7 @@
                 "input": "src/styles/styles.scss",
                 "bundleName": "app"
               },{
-                "input": "src/styles/themes/default.scss",
-                "bundleName": "default",
-                "inject": false
-              },{
-                "input": "src/styles/themes/dark.scss",
+                "input": "src/styles/styles-dark.scss",
                 "bundleName": "dark",
                 "inject": false
               }

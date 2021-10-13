@@ -1,12 +1,14 @@
 import {NgModule} from '@angular/core';
+import {RouterModule} from "@angular/router";
 
 import {SharedModule} from 'app/shared/shared.module';
 import {LayoutComponent} from "./layout.component";
-import {RouterModule} from "@angular/router";
+import {CenteredComponent} from "./layouts/centered/centered.component";
 
 @NgModule({
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    CenteredComponent
   ],
   imports: [
     RouterModule,

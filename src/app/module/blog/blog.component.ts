@@ -3,10 +3,10 @@ import {Subject} from "rxjs";
 import {DOCUMENT} from "@angular/common";
 
 @Component({
-  selector: 'app-landing',
-  templateUrl: './landing.component.html',
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class BlogComponent implements OnInit, OnDestroy {
 
   theme: 'dark' | 'default' = 'default';
   private destroy$: Subject<void> = new Subject<void>();
@@ -14,7 +14,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit(): void {
-    this.loadStyle(`${this.theme}.css`);
+    //this.loadStyle(`${this.theme}.css`);
   }
 
   toggleTheme() {
@@ -64,13 +64,13 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   private getExistingLinkElementByKey(key: string): HTMLLinkElement | null {
-    return this.document.head.querySelector(`link[rel="stylesheet"].${LandingComponent.getClassNameForKey(key)}`);
+    return this.document.head.querySelector(`link[rel="stylesheet"].${BlogComponent.getClassNameForKey(key)}`);
   }
 
   private createLinkElementWithKey(key: string): HTMLLinkElement {
     const linkEl = this.document.createElement('link');
     linkEl.setAttribute('rel', 'stylesheet');
-    linkEl.classList.add(LandingComponent.getClassNameForKey(key));
+    linkEl.classList.add(BlogComponent.getClassNameForKey(key));
     this.document.head.appendChild(linkEl);
     return linkEl;
   }

@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LayoutComponent} from "./layout/layouts/layout.component";
+import {LayoutComponent} from "./layout/layout.component";
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'landing'},
+  {path: '', pathMatch: 'full', redirectTo: 'blog'},
   {
     path: '',
     component: LayoutComponent,
     children: [
       {
-        path: 'landing',
-        loadChildren: () => import('./module/landing/landing.module').then(m => m.LandingModule),
+        path: 'blog',
+        loadChildren: () => import('./module/blog/blog.module').then(m => m.BlogModule),
       }
     ]
   }
