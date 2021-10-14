@@ -4,7 +4,6 @@ import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-layout',
-  styleUrls: ['./layout.component.scss'],
   template: `
     <app-centered>
       <router-outlet></router-outlet>
