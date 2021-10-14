@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from "@angular/router";
 import {BlogComponent} from "./blog.component";
+import {BlogHeaderModule} from "../../misc/components/blog-header/blog-header.module";
 
 export const routes: Route[] = [
   {
@@ -14,7 +15,8 @@ export const routes: Route[] = [
     BlogComponent
   ],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    BlogHeaderModule
   ]
 })
 export class BlogModule {}
