@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {Route, RouterModule} from "@angular/router";
 import {BlogComponent} from "./blog.component";
 import {BlogHeaderModule} from "../../misc/components/blog-header/blog-header.module";
+import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
 
 export const routes: Route[] = [
   {
@@ -16,6 +18,7 @@ export const routes: Route[] = [
   ],
   imports: [
     RouterModule.forChild(routes),
+    CommonModule,
     BlogHeaderModule
   ]
 })

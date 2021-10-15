@@ -1,6 +1,8 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from "rxjs";
 import {DOCUMENT} from "@angular/common";
+import {HttpClient} from "@angular/common/http";
+import {BEURL} from "../../core/const";
 
 @Component({
   selector: 'app-blog',
@@ -10,11 +12,21 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   theme: 'dark' | 'default' = 'default';
   private destroy$: Subject<void> = new Subject<void>();
+  rightPosts : null | {title: string, description: string}[] = null;
+  leftPosts : null | {title: string, description: string}[] = null;
+  featuredPost : null | {title: string, description: string} = null;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  constructor(@Inject(DOCUMENT) private document: Document,
+              private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    //this.loadStyle(`${this.theme}.css`);
+    this.httpClient.get<{_embedded: {posts : [{title: string, description: string}]}}>(BEURL + '/posts')
+      .subscribe(posts => {
+        const piece = posts._embedded.posts.slice(1).length/2;
+        this.leftPosts = posts._embedded.posts.slice(1, piece+1);
+        this.rightPosts = posts._embedded.posts.slice(piece+1);
+        this.featuredPost = posts._embedded.posts[0];
+    });
   }
 
   toggleTheme() {
